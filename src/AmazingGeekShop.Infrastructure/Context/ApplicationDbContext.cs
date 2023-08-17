@@ -1,17 +1,19 @@
-using AmazingGeekShop.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using AmazingGeekShop.Domain.Entities;
 
-namespace AmazingGeekShop.Infrastructure.Context;
-
-public class ApplicationDbContext : DbContext
+namespace AmazingGeekShop.Infrastructure.Context
 {
-    public ApplicationDbContext()
-    {}
-
-    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+    public class ApplicationDbContext : DbContext
     {
-        
-    }
+        public ApplicationDbContext()
+        {
+            
+        }
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+        {
+            
+        }
 
-    public DbSet<Product>?Products { get; set; }
+        DbSet<Product> Products { get; set; }
+    }
 }

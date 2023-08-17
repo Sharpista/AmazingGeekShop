@@ -1,32 +1,13 @@
 using AmazingGeekShop.Domain.Entities;
 using AmazingGeekShop.Domain.Interfaces.Common;
+using AmazingGeekShop.Infrastructure.Context;
+using AmazingGeekShop.Infrastructure.Repositories.Base;
 
 namespace AmazingGeekShop.Infrastructure.Repositories;
 
-public class ProductRepository : IRepository<Product>
+public class ProductRepository : Repository<Product>, IProductRepository
 {
-    public Task<IEnumerable<Product>> GetAllAsync()
+    public ProductRepository(ApplicationDbContext context) : base(context)
     {
-        throw new NotImplementedException();
-    }
-
-    public Task<Product> GetByIdAsync(Guid id)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<Product> CreateAsync(Product entity)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<Product> UpdateAsync(Product entity)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<Product> RemoveAsync(Product entity)
-    {
-        throw new NotImplementedException();
     }
 }
